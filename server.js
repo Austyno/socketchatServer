@@ -54,8 +54,6 @@ io.sockets.on('connection', function (socket) {
 
   });  
 
-
-
     socket.on('newquery',(data)=>{
         // console.log(data);
         var from = data.clientId,
