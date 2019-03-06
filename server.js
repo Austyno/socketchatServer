@@ -5,7 +5,7 @@ var mysql = require('mysql');
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "",
+  password: "tehilla04",
   database: "socketchat"
   });
   
@@ -99,8 +99,8 @@ io.sockets.on('connection', function (socket) {
 });
 
 
-server.listen(9000, ()=>{
-  console.log('we are live on port 9000')
+server.listen(2020, ()=>{
+  console.log('we are live on port 2020')
 });
 
 
