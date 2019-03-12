@@ -13,6 +13,10 @@ var con = mysql.createConnection({
 // var users = {};
 
 
+
+
+
+
 io.sockets.on('connection', function (socket) {
     console.log('user connected with id ' +socket.id);
 
@@ -221,6 +225,13 @@ function callcenterOfflineMsg(socket){
                    })
 
                 }
+                //update viewed status
+                const viewed = "update messages set msg_viewed = ? where msg_to = ?";
+                con.query(viewed,['yes','callcenter'],(error)=>{
+                    if(error){
+                        throw error;
+                    }
+                });
               }
               socket.emit('callcenterOfflineMsg',data);
             //   console.log(data);
