@@ -206,7 +206,7 @@ function updateSocketId(userId, socket,socketid){
 };
 
 function callcenterOfflineMsg(socket){
-    const getOffLineMsg = "select * from messages where msg_to ='callcenter' and msg_replied = 'no'";
+    const getOffLineMsg = "select * from messages where msg_to ='callcenter' and msg_replied = 'no' and msg_viewed";
           con.query(getOffLineMsg,(error,result)=>{
               if(error){
                   throw error;
